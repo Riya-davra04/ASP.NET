@@ -1,0 +1,290 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="VehicleRental.Admin" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+       .header {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 25px;
+            font-weight: bold;
+       }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: black;
+            padding: 10px 20px;
+            height: 100px; 
+            overflow: hidden; 
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            height: 100px; 
+        }
+
+        .nav-logo {
+            height: 80px; 
+            width: auto;
+            max-width: 200px; 
+            object-fit: contain;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            height: 100px;
+        }
+
+            .nav-right a {
+                color: white;
+                text-decoration: none;
+                padding: 12px 15px;
+                font-size: 16px;
+                transition: background 0.3s ease-in-out;
+            }
+
+                
+                .nav-right a:hover {
+                    background: #ff6600;
+                    border-radius: 5px;
+                }
+
+
+            .nav-right a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 15px;
+                font-size: 16px;
+                transition: background 0.3s ease-in-out;
+            }
+
+                .nav-right a:hover {
+                    background: #ff6600;
+                    border-radius: 5px;
+                }
+
+        .footer {
+            background: #0D0D0D;
+            color: #FFFFFF;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: auto;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1;
+            text-align: left;
+            max-width: 300px;
+        }
+
+        .footer-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: cyan;
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            color: #BBBBBB;
+            margin-top: 10px;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+        }
+
+            .social-icons a {
+                color: #FFFFFF;
+                margin: 0 8px;
+                font-size: 18px;
+                transition: 0.3s;
+            }
+
+                .social-icons a:hover {
+                    color: cyan;
+                }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-between;
+            flex: 2;
+            text-align: left;
+        }
+
+        .footer-column {
+            margin: 0 20px;
+        }
+
+            .footer-column h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .footer-column ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .footer-column ul li {
+                    margin: 5px 0;
+                }
+
+                    .footer-column ul li a {
+                        color: #BBBBBB;
+                        text-decoration: none;
+                        transition: 0.3s;
+                    }
+
+                        .footer-column ul li a:hover {
+                            color: cyan;
+                        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            padding-top: 10px;
+            font-size: 14px;
+        }
+
+        .legal-links a {
+            color: #BBBBBB;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+            .legal-links a:hover {
+                color: cyan;
+            }
+
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                margin-bottom: 15px;
+            }
+        }
+
+
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <header>
+            <div class="navbar">
+                <div class="nav-left">
+                    <a href="Home.aspx" style="background-color: #000000">
+                        <img src="Images/logo5.jpg" alt="Logo" class="nav-logo" style="background-color: #000000">
+                    </a>
+                </div>
+                <div class="nav-right" style="background-color: #000000">
+                    <a href="Home.aspx">Home</a>
+                    <a href="Cars.aspx">Cars</a>
+                    <a href="About.aspx">About Us</a>
+                    <a href="Contact.aspx">Contact Us</a>
+                    <a href="Register.aspx">Register</a>
+                    <a href="Login.aspx">Login</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h2 class="footer-brand">🚗 Vehicle Rent</h2>
+                    <p>It's a never-ending battle of making your cars better and also trying to be better yourself.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Account</h3>
+                        <ul>
+                            <li><a href="#">Profile</a></li>
+                            <li><a href="#">Settings</a></li>
+                            <li><a href="#">Billing</a></li>
+                            <li><a href="#">Notifications</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Services</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 All Rights Reserved by Vehicle Rent</p>
+                <div class="legal-links">
+                    <a href="#">Terms</a> |
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Cookies</a>
+                </div>
+            </div>
+        </footer>
+
+    </form>
+</body>
+</html>

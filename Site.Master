@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="VehicleRental.Site" %>  
+  
+<!DOCTYPE html>  
+
+<html>  
+<head runat="server">  
+    <title>Car Rental System</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f4f4f4;  
+            margin: 0;  
+            padding: 0;  
+        }  
+        .sidebar {  
+            width: 250px;  
+            height: 100vh;  
+            background: #2C3E50;  
+            color: white;  
+            position: fixed;  
+            padding-top: 20px;  
+        }  
+        .sidebar h2 {  
+            text-align: center;  
+            padding: 10px;  
+            background: #1A252F;  
+        }  
+        .sidebar a {  
+            display: block;  
+            padding: 12px;  
+            color: white;  
+            text-decoration: none;  
+            transition: 0.3s;  
+        }  
+        .sidebar a:hover {  
+            background: #34495E;  
+        }  
+        .content {  
+            margin-left: 260px;  
+            padding: 20px;  
+        }  
+
+        /* Top Navbar Styling */
+        .navbar {  
+            margin-left:250px;
+            display: flex;  
+            justify-content: space-between;  
+            align-items: center;  
+            background-color: #34495E;  
+            padding: 10px 20px;  
+            color: white;  
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+        }  
+        .navbar h2 {  
+            margin: 0;
+            align-items: center;
+        }  
+        .user-menu {  
+            position: relative;  
+            display: inline-block;  
+        }  
+        .user-dropdown {  
+            display: none;  
+            position: absolute;  
+            right: 0;  
+            background: white;  
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  
+            min-width: 150px;  
+            z-index: 10;  
+        }  
+        .user-dropdown a {  
+            display: block;  
+            padding: 10px;  
+            text-decoration: none;  
+            color: black;  
+        }  
+        .user-dropdown a:hover {  
+            background: #f0f0f0;  
+        }  
+        .user-menu:hover .user-dropdown {  
+            display: block;  
+        }  
+
+        /* Adjust Content Area to fit the Top Navbar */
+        .main-content {  
+            margin-top: 60px;  
+        }  
+    </style>  
+</head>  
+
+<body>  
+
+    <!-- Sidebar -->
+    <div class="sidebar">  
+        <h2>Admin Panel</h2>  
+        <a href="Dashboard.aspx">Dashboard</a>  
+        <a href="Categories.aspx">Categories</a>  
+        <a href="CarVariants.aspx">Car Variants</a>  
+        <a href="Cars.aspx">Cars</a>  
+        <a href="Drivers.aspx">Drivers</a>  
+        <a href="Customers.aspx">Customers</a>  
+        <a href="Bookings.aspx">Bookings</a>  
+        <a href="Feedbacks.aspx">Feedbacks</a>  
+        <a href="Reports.aspx">Reports</a>  
+    </div>  
+
+    <!-- Top Navbar -->
+    <div class="navbar">  
+        <h2>Car Rental System</h2>  
+        <div class="user-menu">  
+            <i class="fas fa-user-circle fa-lg"></i>  
+            <div class="user-dropdown">  
+                <a href="#">Accounts</a>  
+                <a href="Logout.aspx">Logout</a>  
+                <a href="ChangePassword.aspx">Change Password</a>  
+            </div>  
+        </div>  
+    </div>  
+
+    <!-- Main Content Area -->
+    <form id="form1" runat="server">
+        <div class="content main-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>  
+
+</body>  
+</html>
